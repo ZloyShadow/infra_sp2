@@ -5,7 +5,7 @@ from datetime import timedelta
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'nhnt6h45y4tbrn'
+SECRET_KEY = os.getenv('SECRET_KEY'),
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -25,9 +25,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_filters',
-    'api',
     'reviews',
-
+    'api',
 ]
 
 MIDDLEWARE = [
